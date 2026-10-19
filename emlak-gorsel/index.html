@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emlak Görsel Tanıtım | Arsanızı havadan gösterin</title>
+<meta name="description" content="Ada ve parseli yazın, arsanızın drone görünümlü tanıtım videosu Telegram'dan gelsin. Arazinin üzerine yapılabilecek yapıyı da gösterin.">
+<meta name="theme-color" content="#08161F">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Emlak Görsel Tanıtım">
+<meta property="og:title" content="Arsanızı müşterinize havadan gösterin">
+<meta property="og:description" content="Ada ve parseli yazın, drone görünümlü tanıtım videonuz hazır. Boş tarlaya çiftlik, ev, tesis kurulmuş halini de gösterin.">
+<meta property="og:url" content="https://sefadavutyildirim.github.io/emlak-gorsel/">
+<meta property="og:image" content="https://sefadavutyildirim.github.io/emlak-gorsel/medya/onizleme.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Boş bir tarla ve aynı tarlanın üzerine kurulmuş çiftlik, önce ve sonra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arsanızı müşterinize havadan gösterin">
+<meta name="twitter:description" content="Ada ve parseli yazın, drone görünümlü tanıtım videonuz hazır.">
+<meta name="twitter:image" content="https://sefadavutyildirim.github.io/emlak-gorsel/medya/onizleme.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308161F'/%3E%3Cpath d='M14 40 L26 18 L50 24 L44 46 Z' fill='%23FFB62740' stroke='%23FFB627' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#08161F; --ink2:#0E2633; --ink3:#143646;
+    --amber:#FFB627; --orange:#FF7A45; --teal:#2DD4BF; --sky:#7DD3FC;
+    --paper:#F8F5EE; --card:#FFFFFF; --text:#13202A; --muted:#5A6B76; --line:rgba(19,32,42,.10);
+    --wa:#25D366; --tg:#2AABEE;
+    --r-lg:28px; --r-md:20px;
+    --ease:cubic-bezier(.25,.46,.45,.94);
+    color-scheme: light;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--text);line-height:1.6;font-size:1.0625rem;overflow-x:hidden}
+  h1,h2,h3{font-family:"Plus Jakarta Sans",Inter,sans-serif;line-height:1.12;letter-spacing:-.02em}
+  img,video{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  .eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+  section{padding:88px 0}
+  .h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800;margin:14px 0 14px}
+  .lead{color:var(--muted);max-width:620px;font-size:1.08rem}
+  .grad{background:linear-gradient(100deg,var(--amber),var(--orange) 55%,#FF5D8F);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Düğmeler */
+  .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:600;font-size:1rem;transition:transform .35s var(--ease),box-shadow .35s var(--ease);isolation:isolate;white-space:nowrap}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.18);transform:translateX(-101%);transition:transform .45s var(--ease);z-index:-1}
+  @media (hover:hover){.btn:hover{transform:scale(1.03)}.btn:hover::after{transform:translateX(0)}}
+  .btn-wa{background:var(--wa);color:#05290F;box-shadow:0 10px 30px -10px rgba(37,211,102,.7)}
+  .btn-tg{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22)}
+  .btn-tg.light{background:#fff;color:var(--text);border:1px solid var(--line)}
+
+  /* Üst bar */
+  .nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;width:min(1160px,100% - 24px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-radius:999px;transition:background .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;border:1px solid transparent}
+  .nav.solid{background:rgba(8,22,31,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:rgba(255,255,255,.08);box-shadow:0 12px 30px -16px rgba(0,0,0,.6)}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:"Plus Jakarta Sans";font-weight:800;font-size:1.02rem}
+  .brand svg{width:30px;height:30px}
+  .nav .links{display:none;gap:26px;color:rgba(255,255,255,.78);font-size:.95rem}
+  .nav .links a{transition:color .3s,transform .3s}
+  .nav .links a:hover{color:#fff;transform:translateY(-1px)}
+  .nav .btn{padding:10px 16px;font-size:.92rem}
+  @media(min-width:900px){.nav .links{display:flex}}
+
+  /* Giriş */
+  .hero{position:relative;background:radial-gradient(1200px 600px at 85% -10%,rgba(45,212,191,.22),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(255,122,69,.20),transparent 60%),linear-gradient(180deg,var(--ink),var(--ink2));color:#fff;padding:118px 0 72px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 60% 40%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 30%,transparent 75%)}
+  .hero-grid{position:relative;display:grid;gap:44px;align-items:center}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:.86rem;color:rgba(255,255,255,.88)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(45,212,191,.7);animation:ping 2s infinite}
+  @keyframes ping{70%{box-shadow:0 0 0 10px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+  .hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);font-weight:800;margin:20px 0 18px}
+  .hero p.sub{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.78);max-width:560px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:rgba(255,255,255,.72);font-size:.92rem}
+  .hero-points span{display:inline-flex;align-items:center;gap:8px}
+  .hero-points svg{width:18px;height:18px;color:var(--amber)}
+  .parcel-bg{position:absolute;right:-60px;bottom:-40px;width:520px;opacity:.5;pointer-events:none}
+  .parcel-bg path{fill:rgba(255,182,39,.06);stroke:var(--amber);stroke-width:3;stroke-linejoin:round;stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 3.2s .4s var(--ease) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  /* Telefon */
+  .phone{position:relative;width:min(300px,78vw);margin-inline:auto;aspect-ratio:9/19.2;border-radius:44px;padding:11px;background:linear-gradient(160deg,#2b3e4a,#0b1820);box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08) inset}
+  .phone .screen{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:#000}
+  .phone video{width:100%;height:100%;object-fit:cover}
+  .phone .notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:88px;height:24px;border-radius:20px;background:#000;z-index:2}
+  .float{animation:float 6s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-12px)}}
+  .sound{position:absolute;right:12px;bottom:12px;z-index:3;display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:0;background:rgba(8,22,31,.72);color:#fff;font:600 .8rem Inter;cursor:pointer;backdrop-filter:blur(8px)}
+  .sound svg{width:16px;height:16px}
+  .badge-float{position:absolute;z-index:4;background:#fff;color:var(--text);border-radius:16px;padding:10px 14px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55);font-size:.84rem;display:flex;align-items:center;gap:10px}
+  .badge-float b{font-family:"Plus Jakarta Sans";display:block;font-size:.95rem}
+  .badge-float i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none}
+  .badge-float i svg{width:18px;height:18px}
+  .bf1{left:-18px;top:18%}.bf2{right:-22px;bottom:16%}
+  @media(max-width:520px){.bf1{left:-6px}.bf2{right:-6px}}
+
+  /* Eskiden / Şimdi */
+  .compare{display:grid;gap:18px;margin-top:40px}
+  @media(min-width:860px){.compare{grid-template-columns:1fr 1fr}}
+  .cmp{border-radius:var(--r-lg);padding:30px;border:1px solid var(--line)}
+  .cmp h3{font-size:1.35rem;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .cmp ul{list-style:none;display:grid;gap:12px}
+  .cmp li{display:flex;gap:12px;align-items:flex-start}
+  .cmp li svg{width:20px;height:20px;flex:none;margin-top:3px}
+  .cmp.old{background:#EFEBE2;color:#4b5963}
+  .cmp.old li svg{color:#C4553A}
+  .cmp.new{background:linear-gradient(150deg,var(--ink2),var(--ink3));color:#fff;border-color:transparent;box-shadow:0 30px 60px -30px rgba(8,22,31,.6)}
+  .cmp.new li svg{color:var(--teal)}
+  .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;font-weight:600}
+  .old .tag{background:rgba(196,85,58,.12);color:#C4553A}
+  .new .tag{background:rgba(45,212,191,.16);color:var(--teal)}
+
+  /* Adımlar */
+  .steps{display:grid;gap:18px;margin-top:44px;counter-reset:s}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.steps{grid-template-columns:repeat(4,1fr)}}
+  .step{position:relative;background:var(--card);border-radius:var(--r-lg);padding:26px;border:1px solid var(--line);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+  @media(hover:hover){.step:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(8,22,31,.45)}}
+  .step .num{font-family:"Plus Jakarta Sans";font-weight:800;font-size:3.4rem;line-height:1;background:linear-gradient(140deg,var(--amber),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step h3{font-size:1.15rem;margin:12px 0 8px}
+  .step p{color:var(--muted);font-size:.98rem}
+  .step .thumb{margin-top:16px;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#dfe7ea}
+  .step .thumb img{width:100%;height:100%;object-fit:cover}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .chips span{font-size:.78rem;padding:5px 10px;border-radius:999px;background:#F1EEE6;color:#43525c;border:1px solid var(--line)}
+  .tg-mock{margin-top:16px;border-radius:16px;background:#E6EEF2;padding:12px;display:grid;gap:8px;font-size:.84rem}
+  .bubble{background:#fff;border-radius:14px 14px 14px 4px;padding:8px 11px;max-width:92%;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+  .bubble.me{justify-self:end;background:#D9F7E6;border-radius:14px 14px 4px 14px}
+
+  /* Önce / Sonra */
+  .dark{background:linear-gradient(180deg,var(--ink),var(--ink2));color:#fff}
+  .dark .lead{color:rgba(255,255,255,.72)}
+  .ba-grid{display:grid;gap:40px;align-items:center;margin-top:10px}
+  @media(min-width:900px){.ba-grid{grid-template-columns:1fr 1fr}}
+  .ba{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1/1;box-shadow:0 40px 80px -40px rgba(0,0,0,.9);user-select:none;-webkit-user-select:none;touch-action:pan-y}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ba .after{clip-path:inset(0 0 0 var(--p,50%))}
+  .ba .handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:var(--amber);transform:translateX(-50%);pointer-events:none}
+  .ba .handle::after{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;transform:translate(-50%,-50%);border-radius:50%;background:var(--amber);box-shadow:0 8px 24px rgba(0,0,0,.4);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2308161F' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E");background-size:24px;background-repeat:no-repeat;background-position:center}
+  .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+  .ba .lbl{position:absolute;top:14px;padding:6px 12px;border-radius:10px;background:rgba(8,22,31,.78);color:var(--amber);font:700 .8rem "Plus Jakarta Sans";letter-spacing:.08em;pointer-events:none}
+  .ba .l1{left:14px}.ba .l2{right:14px}
+  .uses{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .uses span{padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);font-size:.92rem}
+
+  /* Neler alırsınız */
+  .feat{display:grid;gap:16px;margin-top:44px}
+  @media(min-width:700px){.feat{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1040px){.feat{grid-template-columns:repeat(3,1fr)}}
+  .fc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;transition:transform .4s var(--ease),border-color .4s}
+  @media(hover:hover){.fc:hover{transform:translateY(-4px);border-color:rgba(255,122,69,.4)}}
+  .fc .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px}
+  .fc .ic svg{width:24px;height:24px}
+  .fc h3{font-size:1.12rem;margin-bottom:6px}
+  .fc p{color:var(--muted);font-size:.97rem}
+
+  /* Örnekler */
+  .samples{display:grid;gap:22px;margin-top:44px;align-items:start}
+  @media(min-width:760px){.samples{grid-template-columns:1fr 1fr}.samples .dirs{grid-column:1/-1}}
+  @media(min-width:1080px){.samples{grid-template-columns:280px 280px 1fr}.samples .dirs{grid-column:auto}.samples .vcard{width:100%}}
+  .vcard{background:var(--card);border-radius:var(--r-lg);padding:14px;border:1px solid var(--line);justify-self:center;width:min(300px,100%)}
+  .vcard .vbox{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;background:#0b1820}
+  .vcard .vbox video{width:100%;height:100%;object-fit:cover}
+  .vcard h3{font-size:1.02rem;margin:14px 6px 2px}
+  .vcard p{font-size:.88rem;color:var(--muted);margin:0 6px 6px}
+  .dirs{background:var(--card);border-radius:var(--r-lg);padding:14px;border:1px solid var(--line)}
+  .dirs .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .dirs figure{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1/1}
+  .dirs img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  @media(hover:hover){.dirs figure:hover img{transform:scale(1.06)}}
+  .dirs figcaption{position:absolute;left:8px;top:8px;padding:4px 9px;border-radius:8px;background:rgba(8,22,31,.78);color:var(--amber);font:700 .72rem "Plus Jakarta Sans";letter-spacing:.08em}
+  .dirs h3{font-size:1.02rem;margin:14px 6px 2px}
+  .dirs p{font-size:.88rem;color:var(--muted);margin:0 6px 6px}
+
+  /* Fiyatlar */
+  .prices{display:grid;gap:18px;margin-top:44px}
+  @media(min-width:760px){.prices{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.prices{grid-template-columns:repeat(4,1fr)}}
+  .pc{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column}
+  .pc.hot{background:linear-gradient(160deg,var(--ink2),var(--ink3));color:#fff;border-color:transparent;box-shadow:0 30px 60px -30px rgba(8,22,31,.7)}
+  .pc .ribbon{position:absolute;top:-12px;left:24px;background:linear-gradient(100deg,var(--amber),var(--orange));color:var(--ink);font:700 .74rem "Plus Jakarta Sans";letter-spacing:.06em;padding:6px 12px;border-radius:999px}
+  .pc h3{font-size:1.2rem}
+  .pc .meta{font-size:.9rem;color:var(--muted);margin-top:4px}
+  .pc.hot .meta{color:rgba(255,255,255,.66)}
+  .pc .price{font-family:"Plus Jakarta Sans";font-weight:800;font-size:2.4rem;margin:18px 0 6px;letter-spacing:-.02em}
+  .pc .price small{font-size:1rem;font-weight:600;opacity:.7}
+  .pc ul{list-style:none;display:grid;gap:9px;margin:14px 0 22px;font-size:.95rem}
+  .pc li{display:flex;gap:10px}
+  .pc li svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--orange)}
+  .pc.hot li svg{color:var(--teal)}
+  .pc .btn{margin-top:auto;width:100%}
+  .pc .btn.ghost{background:#F1EEE6;color:var(--text)}
+  .note{margin-top:18px;font-size:.92rem;color:var(--muted)}
+
+  /* Yakında */
+  .soon{display:grid;gap:18px;margin-top:40px}
+  @media(min-width:800px){.soon{grid-template-columns:repeat(3,1fr)}}
+  .sc{border-radius:var(--r-lg);padding:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+  .sc .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px}
+  .sc .ic svg{width:26px;height:26px}
+  .sc h3{font-size:1.18rem;margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .sc p{color:rgba(255,255,255,.72);font-size:.97rem}
+  .now{font:600 .7rem Inter;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(45,212,191,.18);color:var(--teal)}
+  .later{font:600 .7rem Inter;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(255,182,39,.16);color:var(--amber)}
+
+  /* SSS */
+  .faq{margin-top:36px;display:grid;gap:12px;max-width:820px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px 22px;transition:box-shadow .3s}
+  details[open]{box-shadow:0 20px 40px -30px rgba(8,22,31,.45)}
+  summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600;font-family:"Plus Jakarta Sans";font-size:1.05rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--orange);transition:transform .3s var(--ease)}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{color:var(--muted);padding:0 0 18px}
+
+  /* Kapanış */
+  .final{position:relative;overflow:hidden;border-radius:36px;padding:56px 28px;text-align:center;color:#fff;background:radial-gradient(700px 300px at 20% 0%,rgba(255,182,39,.28),transparent 60%),radial-gradient(700px 300px at 90% 100%,rgba(45,212,191,.25),transparent 60%),linear-gradient(140deg,var(--ink2),var(--ink))}
+  .final h2{font-size:clamp(1.9rem,4.6vw,3.2rem);font-weight:800;max-width:780px;margin:0 auto 14px}
+  .final p{color:rgba(255,255,255,.76);max-width:560px;margin:0 auto}
+  .final .cta-row{justify-content:center}
+  footer{padding:40px 0 110px;color:var(--muted);font-size:.9rem}
+  footer .row{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:24px}
+  footer .brand{color:var(--text)}
+
+  /* Sabit WhatsApp düğmesi */
+  .wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.75);animation:pulse 2.4s infinite}
+  .wa-float svg{width:32px;height:32px;color:#fff}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55),0 14px 30px -8px rgba(37,211,102,.75)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0),0 14px 30px -8px rgba(37,211,102,.75)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0),0 14px 30px -8px rgba(37,211,102,.75)}}
+
+  /* Hafif doku */
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  @media(max-width:640px){
+    section{padding:68px 0}
+    .hero{padding:104px 0 60px}
+    .cta-row .btn{flex:1 1 100%}
+    .cmp,.step,.fc,.pc{padding:22px}
+    .final{padding:44px 20px;border-radius:28px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .parcel-bg path{stroke-dashoffset:0}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2.09 22l5.33-1.4a9.87 9.87 0 0 0 4.62 1.18h.01c5.44 0 9.87-4.43 9.87-9.87 0-2.64-1.03-5.12-2.87-7Zm-7.01 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.16.83.84-3.08-.2-.32a8.17 8.17 0 0 1-1.25-4.34c0-4.52 3.68-8.2 8.21-8.2a8.2 8.2 0 0 1 8.2 8.21c0 4.52-3.68 8.2-8.15 8.23Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.94 4.3 18.9 19.05c-.23 1.02-.83 1.27-1.69.79l-4.66-3.43-2.25 2.16c-.25.25-.46.46-.94.46l.34-4.76 8.66-7.83c.38-.34-.08-.52-.58-.19L7.07 13l-4.6-1.44c-1-.31-1.02-1 .21-1.48L20.66 3.1c.83-.31 1.56.19 1.28 1.2Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-vol" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H2v6h4l5 4V5ZM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H2v6h4l5 4V5ZM22 9l-6 6M16 9l6 6"/></symbol>
+  <symbol id="i-parcel" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#FFB627"/><path d="M14 40 L26 18 L50 24 L44 46 Z" fill="rgba(8,22,31,.15)" stroke="#08161F" stroke-width="5" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- Üst bar -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><svg><use href="#i-parcel"/></svg>Emlak Görsel Tanıtım</a>
+  <nav class="links">
+    <a href="#nasil">Nasıl çalışır</a>
+    <a href="#once-sonra">Önce / Sonra</a>
+    <a href="#ornekler">Örnekler</a>
+    <a href="#fiyatlar">Fiyatlar</a>
+    <a href="#sss">Sorular</a>
+  </nav>
+  <a class="btn btn-wa" data-wa href="#"><svg><use href="#i-wa"/></svg>Bilgi al</a>
+</header>
+
+<main id="top">
+<!-- Giriş -->
+<section class="hero">
+  <svg class="parcel-bg" viewBox="0 0 520 420" aria-hidden="true"><path d="M60 120 L120 70 L330 92 L470 250 L300 360 L150 300 L80 230 Z"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill hero-in"><span class="dot"></span>Emlakçılar için yapay zeka destekli tanıtım</span>
+      <h1 class="hero-in">Arsanızı müşterinize <span class="grad">havadan</span> gösterin.</h1>
+      <p class="sub hero-in">Ada ve parseli yazın; arsanın sınırları çizilmiş, seslendirmeli, firma bilgilerinizi taşıyan drone görünümlü tanıtım videosu telefonunuza gelsin. Pilot, randevu, kurgu yok.</p>
+      <div class="cta-row hero-in">
+        <a class="btn btn-wa" data-wa href="#"><svg><use href="#i-wa"/></svg>WhatsApp'tan bilgi al</a>
+        <a class="btn btn-tg" data-tg href="#"><svg><use href="#i-tg"/></svg>Telegram botunu aç</a>
+      </div>
+      <div class="hero-points hero-in">
+        <span><svg><use href="#i-check"/></svg>Tapu kayıtlı her parsel</span>
+        <span><svg><use href="#i-check"/></svg>Reels ve Story için dikey</span>
+        <span><svg><use href="#i-check"/></svg>Firma adınız ve telefonunuz</span>
+      </div>
+    </div>
+    <div class="hero-in" style="position:relative">
+      <div class="phone float">
+        <div class="screen">
+          <div class="notch"></div>
+          <video id="heroVid" src="medya/ana.mp4" poster="medya/ana_kapak.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Boş tarlanın üzerine çiftlik kurulan örnek tanıtım videosu"></video>
+          <button class="sound" type="button" data-sound="heroVid"><svg><use href="#i-mute"/></svg><span>Sesi aç</span></button>
+        </div>
+      </div>
+      <div class="badge-float bf1"><i style="background:#FFF4D6;color:#B7791F"><svg><use href="#i-check"/></svg></i><div><b>7.306 m²</b>Kocasinan / Molu</div></div>
+      <div class="badge-float bf2"><i style="background:#DDF8F3;color:#0F8F7E"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></i><div><b>Çiftlik kuruldu</b>Yapay zeka ile</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Eskiden / Şimdi -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">Neden</span>
+    <h2 class="h2 reveal">Günler süren iş, <span class="grad">birkaç dokunuşa</span> iniyor.</h2>
+    <p class="lead reveal">Arsa satarken müşteri önce görmek ister. Ama her ilan için drone çekimi yaptırmak hem zahmetli hem yavaş.</p>
+    <div class="compare">
+      <div class="cmp old reveal-card">
+        <span class="tag">Eskiden</span>
+        <h3 style="margin-top:12px">Drone çekimi yaptırmak</h3>
+        <ul>
+          <li><svg><use href="#i-x"/></svg>Pilot bul, randevu ayarla, arsaya kadar git</li>
+          <li><svg><use href="#i-x"/></svg>Rüzgar, yağmur, izin derdi; çekim ertelenir</li>
+          <li><svg><use href="#i-x"/></svg>Parsel sınırı videoda belli olmaz, müşteri "nereden nereye?" diye sorar</li>
+          <li><svg><use href="#i-x"/></svg>Kurgu, yazı, seslendirme için ayrıca birine iş verilir</li>
+          <li><svg><use href="#i-x"/></svg>Sonuç günler sonra gelir, ilan bekler</li>
+        </ul>
+      </div>
+      <div class="cmp new reveal-card">
+        <span class="tag">Şimdi</span>
+        <h3 style="margin-top:12px">Emlak Görsel Tanıtım ile</h3>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Telefondan il, ilçe, mahalle, ada ve parseli seçersiniz</li>
+          <li><svg><use href="#i-check"/></svg>Hava durumu, izin, yolculuk yok; ofisten çıkmadan</li>
+          <li><svg><use href="#i-check"/></svg>Parsel sınırı resmi kayıttan çizilir, m² ekranda yazar</li>
+          <li><svg><use href="#i-check"/></svg>Seslendirme, alt yazı, firma bilgileri hazır gelir</li>
+          <li><svg><use href="#i-check"/></svg>Video kısa sürede Telegram'a düşer, hemen paylaşırsınız</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nasıl çalışır -->
+<section id="nasil" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow reveal">Nasıl çalışır</span>
+    <h2 class="h2 reveal">Dört adımda hazır tanıtım videosu</h2>
+    <p class="lead reveal">Her şey Telegram'daki botumuzun içinde olur. Uygulama indirmenize gerek yok.</p>
+    <div class="steps">
+      <div class="step reveal-card">
+        <div class="num">01</div>
+        <h3>Arsayı seçin</h3>
+        <p>İl, ilçe ve mahalleyi listeden seçin, ada ve parsel numarasını yazın.</p>
+        <div class="tg-mock" aria-hidden="true">
+          <div class="bubble">Ada ve parsel numarasını yazın.</div>
+          <div class="bubble me">107 / 1</div>
+          <div class="bubble">Parseli buldum, kontrol ediyorum…</div>
+        </div>
+      </div>
+      <div class="step reveal-card">
+        <div class="num">02</div>
+        <h3>Sınırı onaylayın</h3>
+        <p>Parselin sınırları uydu görüntüsünde çizili gelir. Doğru arsa olduğunu görüp onaylarsınız.</p>
+        <div class="thumb"><img src="medya/parsel.jpg" alt="Uydu görüntüsünde sınırları çizilmiş parsel" loading="lazy"></div>
+      </div>
+      <div class="step reveal-card">
+        <div class="num">03</div>
+        <h3>Videoyu tarif edin</h3>
+        <p>Video türünü ve arsaya kurulacak yapıyı seçin, seslendirme metninizi yazın. Metin uzunsa yapay zeka kısaltıp onayınıza sunar.</p>
+        <div class="chips"><span>Çiftlik</span><span>Villa</span><span>Bağ evi</span><span>Depo, tesis</span><span>Sadece drone</span></div>
+      </div>
+      <div class="step reveal-card">
+        <div class="num">04</div>
+        <h3>Videonuz gelsin</h3>
+        <p>Yapay zeka videoyu kare kare kontrol eder. Hazır olunca video ve 4 yönden arsa fotoğrafı Telegram'a gelir.</p>
+        <div class="tg-mock" aria-hidden="true">
+          <div class="bubble">🎬 Videonuz hazır!</div>
+          <div class="bubble">📸 Arsanın 4 yönden görünümü</div>
+          <div class="bubble me">Harika, hemen paylaşıyorum 👍</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Önce / Sonra -->
+<section class="dark" id="once-sonra">
+  <div class="wrap ba-grid">
+    <div>
+      <span class="eyebrow reveal" style="color:var(--amber)">Yapay zeka ile yapı kurma</span>
+      <h2 class="h2 reveal">Boş arsayı değil, <span class="grad">olabileceği hali</span> satın.</h2>
+      <p class="lead reveal">Müşteri boş bir tarlada geleceği hayal edemez. Videoda arsanın üzerine çiftlik, villa ya da tesis kurulur; yapı tam parsel sınırının içinde yükselir. Alıcı, arsanın ne işe yarayacağını ilk bakışta görür.</p>
+      <div class="uses reveal">
+        <span>🏡 Villa ve bağ evi</span><span>🌾 Çiftlik ve sera</span><span>🏭 Depo ve tesis</span><span>⛽ Ticari alan</span>
+      </div>
+      <p class="reveal" style="margin-top:22px;color:rgba(255,255,255,.6);font-size:.92rem">Kaydırıcıyı sağa sola çekip deneyin.</p>
+    </div>
+    <div class="ba reveal-card" id="ba">
+      <img src="medya/oncesi.jpg" alt="Boş tarla, parsel sınırı çizili" loading="lazy">
+      <img class="after" src="medya/sonrasi.jpg" alt="Aynı tarlanın üzerine kurulmuş çiftlik" loading="lazy">
+      <div class="handle"></div>
+      <span class="lbl l1">ÖNCE</span><span class="lbl l2">SONRA</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Önce ve sonra görüntüsünü karşılaştır">
+    </div>
+  </div>
+</section>
+
+<!-- Neler alırsınız -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">Teslimatta neler var</span>
+    <h2 class="h2 reveal">Paylaşmaya hazır, eksiksiz bir paket</h2>
+    <div class="feat">
+      <div class="fc reveal-card"><div class="ic" style="background:#FFF1E8;color:#E2622C"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Dikey video</h3><p>Instagram Reels, Story, TikTok ve WhatsApp durum için hazır, yüksek çözünürlüklü.</p></div>
+      <div class="fc reveal-card"><div class="ic" style="background:#E6F8F5;color:#0F8F7E"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></div><h3>Profesyonel seslendirme</h3><p>Yazdığınız metin doğal bir kadın sesiyle okunur. İsterseniz alt yazı da eklenir.</p></div>
+      <div class="fc reveal-card"><div class="ic" style="background:#FFF7DD;color:#B7791F"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9M12 3v6"/></svg></div><h3>Firmanızın imzası</h3><p>Firma adınız, telefonunuz ve logonuz videonun üstünde yer alır. Video her paylaşıldığında size müşteri getirir.</p></div>
+      <div class="fc reveal-card"><div class="ic" style="background:#EAF4FF;color:#2563EB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 15 11 8l5 3-2 5Z"/></svg></div><h3>Resmi parsel bilgisi</h3><p>Sınır resmi kayıttan çizilir. İlçe, mahalle, ada, parsel ve m² videoda net okunur.</p></div>
+      <div class="fc reveal-card"><div class="ic" style="background:#F3EAFE;color:#7C3AED"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12Z"/></svg></div><h3>4 yönden fotoğraf</h3><p>Kuzeyden, güneyden, doğudan ve batıdan arsa fotoğrafları; ilan sitelerine doğrudan yüklenir.</p></div>
+      <div class="fc reveal-card"><div class="ic" style="background:#E8FBEF;color:#15803D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Kalite kontrolü</h3><p>Her video teslimden önce yapay zeka tarafından kare kare incelenir. Sorun varsa siz görmeden yeniden üretilir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Örnekler -->
+<section id="ornekler" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow reveal">Örnekler</span>
+    <h2 class="h2 reveal">Gerçek parseller, gerçek sonuçlar</h2>
+    <p class="lead reveal">Aşağıdakiler botumuzun ürettiği videolardan. Firma bilgileri örnek amaçlı kaldırıldı.</p>
+    <div class="samples">
+      <div class="vcard reveal-card">
+        <div class="vbox">
+          <video id="v1" src="medya/ana.mp4" poster="medya/ana_kapak.jpg" muted loop playsinline preload="none" aria-label="Çiftlik kurulumlu tanıtım videosu"></video>
+          <button class="sound" type="button" data-sound="v1"><svg><use href="#i-mute"/></svg><span>Sesi aç</span></button>
+        </div>
+        <h3>Yapı kurulumlu video</h3>
+        <p>Kayseri, Kocasinan · 7.306 m² tarla, çiftlik kuruldu</p>
+      </div>
+      <div class="vcard reveal-card">
+        <div class="vbox">
+          <video id="v2" src="medya/drone.mp4" poster="medya/drone_kapak.jpg" muted loop playsinline preload="none" aria-label="Drone tanıtım videosu"></video>
+          <button class="sound" type="button" data-sound="v2"><svg><use href="#i-mute"/></svg><span>Sesi aç</span></button>
+        </div>
+        <h3>Drone tanıtım videosu</h3>
+        <p>Aynı parsel, yalnız havadan tanıtım</p>
+      </div>
+      <div class="dirs reveal-card">
+        <div class="g">
+          <figure><img src="medya/yon_kuzey.jpg" alt="Arsanın kuzeyden görünümü" loading="lazy"><figcaption>KUZEYDEN</figcaption></figure>
+          <figure><img src="medya/yon_guney.jpg" alt="Arsanın güneyden görünümü" loading="lazy"><figcaption>GÜNEYDEN</figcaption></figure>
+          <figure><img src="medya/yon_dogu.jpg" alt="Arsanın doğudan görünümü" loading="lazy"><figcaption>DOĞUDAN</figcaption></figure>
+          <figure><img src="medya/yon_bati.jpg" alt="Arsanın batıdan görünümü" loading="lazy"><figcaption>BATIDAN</figcaption></figure>
+        </div>
+        <h3>4 yönden arsa fotoğrafları</h3>
+        <p>Kayseri, İncesu · otoyol kenarı ticari parsel</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fiyatlar -->
+<section id="fiyatlar" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow reveal">Fiyatlar</span>
+    <h2 class="h2 reveal">İhtiyacınıza göre seçin</h2>
+    <p class="lead reveal">Ödeme video başına. Video size teslim edilmeden hesabınızdan bir şey düşmez.</p>
+    <div class="prices">
+      <div class="pc reveal-card">
+        <h3>Drone Tanıtım</h3>
+        <div class="meta">8 ile 25 saniye arası</div>
+        <div class="price">X TL <small>/ video</small></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Havadan arsa tanıtımı</li>
+          <li><svg><use href="#i-check"/></svg>Parsel sınırı ve m²</li>
+          <li><svg><use href="#i-check"/></svg>Seslendirme ve firma bilgileri</li>
+          <li><svg><use href="#i-check"/></svg>4 yönden fotoğraf</li>
+        </ul>
+        <a class="btn ghost" data-wa data-msg="Merhaba, Drone Tanıtım videosu hakkında bilgi almak istiyorum." href="#">Bilgi al</a>
+      </div>
+      <div class="pc hot reveal-card">
+        <span class="ribbon">EN ÇOK İLGİ GÖREN</span>
+        <h3>Yapı Kurulumlu</h3>
+        <div class="meta">25 saniyeye kadar · 1 sahne</div>
+        <div class="price">X TL <small>/ video</small></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Drone tanıtımındaki her şey</li>
+          <li><svg><use href="#i-check"/></svg>Arsanın üzerine yapay zeka ile yapı</li>
+          <li><svg><use href="#i-check"/></svg>Çiftlik, villa, depo, tesis…</li>
+          <li><svg><use href="#i-check"/></svg>Kalite kontrolünden geçmiş teslim</li>
+        </ul>
+        <a class="btn btn-wa" data-wa data-msg="Merhaba, Yapı Kurulumlu video hakkında bilgi almak istiyorum." href="#"><svg><use href="#i-wa"/></svg>Bilgi al</a>
+      </div>
+      <div class="pc reveal-card">
+        <h3>Yapı Kurulumlu Uzun</h3>
+        <div class="meta">25 ile 40 saniye arası · 2 sahne</div>
+        <div class="price">X TL <small>/ video</small></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>İki ayrı sahne, daha uzun anlatım</li>
+          <li><svg><use href="#i-check"/></svg>Büyük ve çok yönlü arsalar için</li>
+          <li><svg><use href="#i-check"/></svg>Seslendirme ve alt yazı</li>
+          <li><svg><use href="#i-check"/></svg>4 yönden fotoğraf</li>
+        </ul>
+        <a class="btn ghost" data-wa data-msg="Merhaba, Yapı Kurulumlu Uzun video hakkında bilgi almak istiyorum." href="#">Bilgi al</a>
+      </div>
+      <div class="pc reveal-card">
+        <h3>Revize</h3>
+        <div class="meta">Teslim edilmiş videoya</div>
+        <div class="price">X TL <small>/ revize</small></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Seslendirme metnini değiştirme</li>
+          <li><svg><use href="#i-check"/></svg>Ses ya da alt yazı değişikliği</li>
+          <li><svg><use href="#i-check"/></svg>Fiyat, telefon gibi yazı güncellemesi</li>
+        </ul>
+        <a class="btn ghost" data-wa data-msg="Merhaba, revize hakkında bilgi almak istiyorum." href="#">Bilgi al</a>
+      </div>
+    </div>
+    <p class="note reveal">Çok ilan çalışan ofisler için toplu kullanım paketleri hazırlıyoruz. Bilgi için yazın.</p>
+  </div>
+</section>
+
+<!-- Yakında -->
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="color:var(--amber)">Büyüyoruz</span>
+    <h2 class="h2 reveal">Size en kolay gelen kanaldan sipariş verin</h2>
+    <p class="lead reveal">Bugün Telegram'dayız. Çok yakında WhatsApp'tan ve web sitemizden de video sipariş edebileceksiniz.</p>
+    <div class="soon">
+      <div class="sc reveal-card"><div class="ic" style="background:rgba(42,171,238,.16);color:var(--tg)"><svg><use href="#i-tg"/></svg></div><h3>Telegram <span class="now">Şu an açık</span></h3><p>Botumuz 7/24 çalışır. Siparişinizi istediğiniz saatte verin, videonuz hazır olunca haber verelim.</p></div>
+      <div class="sc reveal-card"><div class="ic" style="background:rgba(37,211,102,.16);color:var(--wa)"><svg><use href="#i-wa"/></svg></div><h3>WhatsApp <span class="later">Yakında</span></h3><p>Her gün kullandığınız WhatsApp'tan ada ve parseli yazıp videonuzu alacaksınız.</p></div>
+      <div class="sc reveal-card"><div class="ic" style="background:rgba(255,182,39,.16);color:var(--amber)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Web sitesi <span class="later">Yakında</span></h3><p>Bilgisayardan sipariş verin, geçmiş videolarınızı tek bir panelden yönetin.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SSS -->
+<section id="sss">
+  <div class="wrap">
+    <span class="eyebrow reveal">Sık sorulanlar</span>
+    <h2 class="h2 reveal">Aklınıza takılanlar</h2>
+    <div class="faq">
+      <details class="reveal"><summary>Gerçekten drone uçuruyor musunuz?</summary><p>Hayır, uçuşa gerek kalmıyor. Video, arsanın güncel uydu görüntüsünden drone bakış açısıyla oluşturulur. Böylece hava durumu, izin ve yolculuk derdi olmadan her parseli havadan gösterebilirsiniz.</p></details>
+      <details class="reveal"><summary>Hangi araziler için video yapılabiliyor?</summary><p>Türkiye'de tapu kaydı olan arsa, tarla ve parseller için. İl, ilçe, mahalle, ada ve parsel bilgisi yeterli; sınırlar resmi kayıttan otomatik çizilir.</p></details>
+      <details class="reveal"><summary>Arsaya kurulan yapı gerçek bir proje mi?</summary><p>Hayır, yapay zekanın hazırladığı bir canlandırmadır. Alıcıya arsanın neye dönüşebileceğini göstermek içindir; resmi bir proje ya da imar bilgisi yerine geçmez.</p></details>
+      <details class="reveal"><summary>Videoda firmamın bilgileri görünüyor mu?</summary><p>Evet. Firma adınız, telefon numaranız ve logonuz videonun üstünde yer alır. Video nerede paylaşılırsa sizi aratır.</p></details>
+      <details class="reveal"><summary>Video ne kadar sürede hazır oluyor?</summary><p>Siparişten kısa süre sonra Telegram'a gelir. Yapı kurulumlu videolar biraz daha uzun sürer; hazır olunca bot size haber verir.</p></details>
+      <details class="reveal"><summary>Videoyu beğenmezsem ne olur?</summary><p>Her video teslimden önce kalite kontrolünden geçer. Metin, ses ya da yazıda değişiklik isterseniz revize ile güncelleriz.</p></details>
+      <details class="reveal"><summary>Nasıl başlarım?</summary><p>WhatsApp'tan bize yazın, hesabınızı açalım. Sonra Telegram botuna giriş yapıp ilk videonuzu hemen sipariş edebilirsiniz.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Kapanış -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="final reveal-card">
+      <h2>Bir sonraki ilanınız <span class="grad">havadan</span> görünsün.</h2>
+      <p>Hesabınızı açalım, ilk arsanızın videosunu birlikte hazırlayalım.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-wa href="#"><svg><use href="#i-wa"/></svg>WhatsApp'tan yazın</a>
+        <a class="btn btn-tg" data-tg href="#"><svg><use href="#i-tg"/></svg>Telegram botunu aç</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <a class="brand" href="#top"><svg><use href="#i-parcel"/></svg>Emlak Görsel Tanıtım</a>
+    <span>WhatsApp: <a data-wa href="#" style="text-decoration:underline">0540 354 53 34</a> · Telegram: <a data-tg href="#" style="text-decoration:underline">@EmlakGorselTanitimBot</a></span>
+    <span>Uydu görüntüsü: Esri · Parsel bilgisi: TKGM</span>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" aria-label="WhatsApp'tan yazın"><svg><use href="#i-wa"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var WA = "905403545334";
+  var TG = "https://t.me/EmlakGorselTanitimBot";
+  var DEF = "Merhaba, arsa tanıtım videosu hakkında bilgi almak istiyorum.";
+
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(a.getAttribute("data-msg") || DEF);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.querySelectorAll("[data-tg]").forEach(function(a){ a.href = TG; a.target = "_blank"; a.rel = "noopener"; });
+
+  // Üst bar: girişi geçince koyulaşır
+  var nav = document.getElementById("nav");
+  function onScroll(){ nav.classList.toggle("solid", window.scrollY > 40); }
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  // Ses düğmeleri
+  document.querySelectorAll("[data-sound]").forEach(function(b){
+    var v = document.getElementById(b.getAttribute("data-sound"));
+    b.addEventListener("click", function(){
+      document.querySelectorAll("video").forEach(function(o){ if(o!==v){ o.muted = true; }});
+      document.querySelectorAll("[data-sound]").forEach(function(o){ if(o!==b){ o.querySelector("use").setAttribute("href","#i-mute"); o.querySelector("span").textContent="Sesi aç"; }});
+      v.muted = !v.muted;
+      if(!v.muted){ v.currentTime = 0; v.play(); }
+      b.querySelector("use").setAttribute("href", v.muted ? "#i-mute" : "#i-vol");
+      b.querySelector("span").textContent = v.muted ? "Sesi aç" : "Sesi kapat";
+    });
+  });
+
+  // Örnek videolar görününce oynasın, çıkınca dursun
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var v = e.target;
+        if(e.isIntersecting){ v.preload = "auto"; var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+        else { v.pause(); }
+      });
+    }, {threshold:.35});
+    ["v1","v2"].forEach(function(id){ io.observe(document.getElementById(id)); });
+  }
+
+  // Önce / sonra kaydırıcısı
+  var ba = document.getElementById("ba"), r = ba.querySelector("input");
+  function setP(){ ba.style.setProperty("--p", r.value + "%"); }
+  r.addEventListener("input", setP); setP();
+
+  // Animasyonlar (GSAP yüklenmezse içerik zaten görünür)
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(window.gsap && window.ScrollTrigger && !reduce){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.context(function(){
+      gsap.from(".hero-in", {y:28, opacity:0, duration:1, ease:"power3.out", stagger:.08});
+      gsap.utils.toArray(".reveal").forEach(function(el){
+        gsap.from(el, {y:24, opacity:0, duration:.9, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 85%"}});
+      });
+      gsap.set(".reveal-card", {y:40, opacity:0});
+      ScrollTrigger.batch(".reveal-card", {start:"top 88%", onEnter:function(b){
+        gsap.to(b, {y:0, opacity:1, duration:.9, ease:"power3.out", stagger:.15, overwrite:true});
+      }});
+      // Önce/sonra: ekrana girince kaydırıcı kendini bir kez gösterir
+      ScrollTrigger.create({trigger:"#ba", start:"top 70%", once:true, onEnter:function(){
+        var o = {p:50};
+        gsap.timeline().to(o,{p:18,duration:.9,ease:"power2.inOut",onUpdate:function(){r.value=o.p;setP();}})
+          .to(o,{p:82,duration:1.2,ease:"power2.inOut",onUpdate:function(){r.value=o.p;setP();}})
+          .to(o,{p:50,duration:.8,ease:"power2.inOut",onUpdate:function(){r.value=o.p;setP();}});
+      }});
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -13,3 +13,15 @@ gizlilik ve koşullar sayfaları.
 
 Neden: Uygulama "Testing" durumundayken Google verilen izinleri 7 günde bir siler
 (E-posta asistanı 2026-10-19'da bu yüzden durdu).
+
+## Emlak Görsel Tanıtım sayfası
+
+`emlak-gorsel/`: @EmlakGorselTanitimBot hizmetinin tanıtım sayfası.
+Adres: https://sefadavutyildirim.github.io/emlak-gorsel/
+
+- Fiyatlar bilerek "X TL"; hiçbir yerde "ücretsiz" geçmez (kullanıcı kararı).
+- Medya `emlak-gorsel/medya/`: Emlak_Arazi_Drone_Çekim çıktılarından; firma adı ve telefon
+  görünen kısımlar kırpıldı (Alpine Swiss ve gerçek numara sayfaya girmez).
+- WhatsApp düğmeleri 0540 354 53 34'e hazır mesajla açılır; numara `index.html` sonundaki
+  `WA` değişkeninde.
+- `medya/onizleme.jpg`: WhatsApp/sosyal medya link önizlemesi (1200x630).
