@@ -3,20 +3,287 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>E-posta Takip Otomasyonu</title>
+<title>Sefa Davut Yıldırım | Yazılım Geliştirici</title>
+<meta name="description" content="Sefa Davut Yıldırım: Flutter, Next.js, NestJS ve PHP ile mobil ve web projeleri geliştiren yazılım geliştirici. Projeler, deneyim ve iletişim.">
+<meta property="og:title" content="Sefa Davut Yıldırım | Yazılım Geliştirici">
+<meta property="og:description" content="Mobil ve web projeleri, yapay zeka destekli otomasyonlar.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://sefadavutyildirim.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 16px; line-height: 1.6; color: #1f2328; background: #fff; }
-  a { color: #0b5cad; }
+  :root {
+    --night: #08090C;
+    --night-soft: #0E0F14;
+    --night-elev: #14161D;
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #F4F2EC;
+    --ash: #C9CCD4;
+    --mute: #8A8E99;
+    --blue: #4F8BFF;
+    --blue-soft: #7AA8FF;
+    --sans: 'Inter Tight', 'Inter', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { overflow-x: clip; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--night);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(79, 139, 255, 0.35); }
+  a { color: var(--blue-soft); text-decoration: none; }
+  a:hover { color: var(--text); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  .glow {
+    position: absolute; inset: 0 0 auto 0; height: 520px; pointer-events: none; z-index: -1;
+    background: radial-gradient(600px 300px at 20% 0%, rgba(79, 139, 255, 0.18), transparent 70%);
+  }
+
+  /* Ust bolum */
+  header { padding: 88px 0 56px; }
+  .avatar {
+    width: 64px; height: 64px; border-radius: 18px;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--blue), #2F6BE6);
+    font-weight: 700; font-size: 22px; letter-spacing: 0;
+    margin-bottom: 28px;
+  }
+  .label {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; margin: 10px 0 18px; font-weight: 700; }
+  .lead { font-size: 1.12rem; color: var(--ash); max-width: 640px; margin: 0 0 30px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 10px;
+    border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03);
+    color: var(--text); font-size: 0.95rem; font-weight: 500;
+  }
+  .btn:hover { border-color: rgba(122, 168, 255, 0.5); color: var(--text); }
+  .btn.primary { background: var(--blue); border-color: var(--blue); }
+  .btn.primary:hover { background: #2F6BE6; }
+  .btn svg { width: 16px; height: 16px; flex: none; }
+
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.5rem; letter-spacing: -0.025em; margin: 8px 0 26px; font-weight: 600; }
+
+  /* Projeler */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card.featured { grid-column: 1 / -1; flex-direction: row; }
+  .card.featured img { width: 56%; aspect-ratio: auto; object-fit: contain; background: #0A0B0F; border-bottom: 0; border-right: 1px solid var(--line); }
+  .card.featured .body { padding: 28px; }
+  .card.featured h3 { font-size: 1.35rem; }
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--night-soft); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden;
+  }
+  .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
+  .card .body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .card h3 { margin: 0; font-size: 1.12rem; letter-spacing: -0.02em; font-weight: 600; }
+  .card p { margin: 0; color: var(--ash); font-size: 0.96rem; }
+  .meta { font-family: var(--mono); font-size: 0.72rem; color: var(--mute); letter-spacing: 0.04em; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .tag {
+    font-family: var(--mono); font-size: 0.7rem; color: var(--ash);
+    padding: 3px 8px; border-radius: 6px; background: var(--night-elev); border: 1px solid var(--line);
+  }
+  .card .more { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.92rem; font-weight: 500; }
+
+  /* Deneyim */
+  .item { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 14px 0; }
+  .item + .item { border-top: 1px dashed var(--line); }
+  .item .when { font-family: var(--mono); font-size: 0.78rem; color: var(--mute); padding-top: 3px; }
+  .item h3 { margin: 0 0 4px; font-size: 1.04rem; font-weight: 600; letter-spacing: -0.015em; }
+  .item p { margin: 0; color: var(--ash); font-size: 0.95rem; }
+
+  /* Yetkinlikler */
+  .skills { display: grid; gap: 14px; }
+  .skills .row { display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: start; }
+  .skills .row .label { padding-top: 5px; }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--mute); font-size: 0.88rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer a { color: var(--mute); }
+  footer a:hover { color: var(--text); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    header { padding: 56px 0 40px; }
+    .grid { grid-template-columns: 1fr; }
+    .card.featured { flex-direction: column; }
+    .card.featured img { width: 100%; aspect-ratio: 1200 / 630; border-right: 0; border-bottom: 1px solid var(--line); }
+    .card.featured .body { padding: 20px; }
+    .item, .skills .row { grid-template-columns: 1fr; gap: 4px; }
+  }
 </style>
 </head>
 <body>
-<h1>E-posta Takip Otomasyonu</h1>
-<p>Bu uygulama Sefa Yıldırım'ın kişisel otomasyonlarıdır. Yalnız sahibinin kendi Google hesabıyla kullanılır.</p>
-<ul>
-  <li><strong>E-posta asistanı:</strong> Her sabah gelen kutusundaki okunmamış e-postaları tarar, reklam ve bültenleri okundu yapar, özetini sahibine Telegram'dan iletir.</li>
-  <li><strong>Arsa tanıtım botu:</strong> Sipariş kayıtlarını sahibinin Google E-Tablolar dosyasına yazar.</li>
-</ul>
-<p><a href="gizlilik.html">Gizlilik Politikası</a> · <a href="kosullar.html">Kullanım Koşulları</a></p>
-<p>İletişim: sefa.davut.yildirim@gmail.com</p>
+<div class="glow"></div>
+
+<header>
+  <div class="wrap">
+    <div class="avatar" aria-hidden="true">SY</div>
+    <div class="label">Yazılım Geliştirici · İstanbul</div>
+    <h1>Sefa Davut Yıldırım</h1>
+    <p class="lead">Flutter, Next.js, NestJS ve PHP ile mobil ve web projeleri geliştiriyorum. Yapay zeka destekli araçlarla fikirden çalışan ürüne hızlı ilerliyor, günlük işleri kendi kendine yürüyen otomasyonlara çeviriyorum.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:sefa.davut.yildirim@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        E-posta gönder
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/sefadavutyildirim" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4V9.5Z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" href="https://github.com/sefadavutyildirim" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="projeler">
+    <div class="wrap">
+      <div class="label">Projeler</div>
+      <h2>Üzerinde çalıştığım işler</h2>
+      <div class="grid">
+
+        <article class="card featured">
+          <img src="emlak-gorsel/medya/onizleme.jpg" alt="Boş bir tarla ve aynı tarlanın üzerine kurulmuş çiftlik, önce ve sonra" loading="lazy">
+          <div class="body">
+            <div class="meta">2026 · Yayında</div>
+            <h3>Emlak Görsel Tanıtım</h3>
+            <p>Emlakçılar için bir Telegram botu. Ada ve parsel bilgisi yazılınca arsanın gerçek uydu görüntüsünden drone görünümlü bir tanıtım videosu üretir. Araziye yapılabilecek yapıyı da gösterebilir.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Telegram</span><span class="tag">Yapay zeka video</span><span class="tag">TKGM</span></div>
+            <div class="more"><a href="emlak-gorsel/">Tanıtım sayfası →</a><a href="https://t.me/EmlakGorselTanitimBot" target="_blank" rel="noopener">Botu aç →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="body">
+            <div class="meta">Mayıs 2026 · Devam ediyor</div>
+            <h3>İttiba: Sünnet-i Seniyye Rehberi</h3>
+            <p>Mobil uygulama, yönetim paneli, web sitesi ve sunucu tarafından oluşan bir ürün. Gizlilik öncelikli, internet olmadan da çalışan bir yapıda kuruldu. Günlük görev, seri, telafi ve madalya kurallarını işleyen bir çekirdek içerir.</p>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span></div>
+          </div>
+        </article>
+
+
+        <article class="card">
+          <div class="body">
+            <div class="meta">2026 · Her gün çalışıyor</div>
+            <h3>E-posta Asistanı</h3>
+            <p>Her sabah gelen kutusunu tarar. Reklam ve bültenleri ayıklar, önemli e-postaların kısa özetini Telegram'dan iletir. Bulutta, kendi kendine zamanında çalışır.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Gmail API</span><span class="tag">OpenAI</span><span class="tag">Railway</span></div>
+            <div class="more"><a href="asistanlar/">Ayrıntılar →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="body">
+            <div class="meta">TEKNOFEST · Takım projesi</div>
+            <h3>Fısıltı</h3>
+            <p>Öğretim elemanı ve öğrencilerden oluşan bir ekiple geliştirilen mobil uygulama prototipi. Konuşmayı yazıya çevirir, metni işler, ölçümleri cihazda saklar ve otomatik rapor üretir. Dışa aktarılan veriler şifrelenir.</p>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Speech-to-Text</span><span class="tag">NLP</span><span class="tag">AES-256</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="deneyim">
+    <div class="wrap">
+      <div class="label">Deneyim</div>
+      <h2>Çalışma geçmişi</h2>
+      <div class="item">
+        <div class="when">2026 · Devam</div>
+        <div>
+          <h3>Freelance Mobil Uygulama Geliştirme</h3>
+          <p>Flutter tabanlı mobil uygulamalarda teknik planlama, veri tabanı bağlantıları, test ve hata giderme. Mobil ve web bileşenlerini birlikte içeren projelerde ihtiyaçları teknik yapıya dönüştürme.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2020 · 2022</div>
+        <div>
+          <h3>Start-up Kurucu Ortağı</h3>
+          <p>Freelance başlayan web işlerini bir girişime dönüştürdüm. WordPress ve OpenCart siteleri kurdum, bakımını ve özel geliştirmelerini yaptım. Hosting, alan adı ve teknik destek hizmeti verdim.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2020</div>
+        <div>
+          <h3><a href="https://demimakina.com.tr" target="_blank" rel="noopener">demimakina.com.tr</a></h3>
+          <p>Yönetim panelli, dinamik bir kurumsal web sitesi. İçeriğin büyük bölümü panelden yönetiliyor. 2020'de yayına alındı, hala kullanılıyor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2015 · 2019</div>
+        <div>
+          <h3>Kamu Personeli, Astsubay</h3>
+          <p>Kurumsal prosedürler, ekip çalışması ve sorumluluk gerektiren operasyonel süreçlerde görev aldım.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="yetkinlikler">
+    <div class="wrap">
+      <div class="label">Yetkinlikler</div>
+      <h2>Kullandığım teknolojiler</h2>
+      <div class="skills">
+        <div class="row"><div class="label">Diller</div><div class="tags"><span class="tag">PHP</span><span class="tag">Dart</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">Python</span></div></div>
+        <div class="row"><div class="label">Mobil / Web</div><div class="tags"><span class="tag">Flutter</span><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">WordPress</span><span class="tag">OpenCart</span></div></div>
+        <div class="row"><div class="label">Veri tabanı</div><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MSSQL</span><span class="tag">SQL</span></div></div>
+        <div class="row"><div class="label">Araçlar</div><div class="tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">IntelliJ IDEA</span><span class="tag">Postman</span><span class="tag">pgAdmin</span><span class="tag">cPanel</span><span class="tag">REST API</span></div></div>
+        <div class="row"><div class="label">Yapay zeka</div><div class="tags"><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">OpenAI API</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="egitim">
+    <div class="wrap">
+      <div class="label">Eğitim</div>
+      <h2>Okullar</h2>
+      <div class="item">
+        <div class="when">2025 · Devam</div>
+        <div><h3>Beykoz Üniversitesi</h3><p>Büyük Veri Analistliği, ön lisans</p></div>
+      </div>
+      <div class="item">
+        <div class="when">2019 · 2023</div>
+        <div><h3>Anadolu Üniversitesi</h3><p>Yönetim Bilişim Sistemleri, lisans</p></div>
+      </div>
+      <div class="item">
+        <div class="when">2015 · 2019</div>
+        <div><h3>Anadolu Üniversitesi</h3><p>İşletme, lisans</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sefa Davut Yıldırım</span>
+    <nav>
+      <a href="mailto:sefa.davut.yildirim@gmail.com">sefa.davut.yildirim@gmail.com</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

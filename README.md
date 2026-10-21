@@ -1,5 +1,8 @@
 # Google İzin Sayfaları
 
+Kök `index.html` Sefa'nın kişisel profil sayfasıdır (özgeçmişten, 2026-10-21). Google uygulamasının
+anlatım sayfası `asistanlar/` altındadır.
+
 Google Auth Platform'da "E-posta Takip Otomasyonu" uygulamasını (My First Project,
 sefa.davut.yildirim@gmail.com) "In production" durumuna almak için gereken ana sayfa,
 gizlilik ve koşullar sayfaları.
