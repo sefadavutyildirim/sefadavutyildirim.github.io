@@ -6,7 +6,7 @@ gizlilik ve koşullar sayfaları.
 
 - Yayın yeri: GitHub Pages, `sefadavutyildirim.github.io` deposu.
 - Branding linkleri:
-  - Ana sayfa: https://sefadavutyildirim.github.io/
+  - Ana sayfa: https://sefadavutyildirim.github.io/asistanlar/ (2026-10-21'den beri; kök adres kişisel profil sayfası olacak)
   - Gizlilik: https://sefadavutyildirim.github.io/gizlilik.html
   - Koşullar: https://sefadavutyildirim.github.io/kosullar.html
   - Authorized domain: `sefadavutyildirim.github.io`
